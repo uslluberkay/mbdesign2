@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M ❤️ B — Sonsuza Kadar Birlikte</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Playfair Display for romance -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        deepDark: '#0f0715',
+                        cardDark: '#1a1025',
+                        cardBorder: '#2d1b42',
+                        purpleGlow: '#a855f7',
+                        pinkGlow: '#ec4899',
+                        textLight: '#f3e8ff',
+                        textMuted: '#d8b4fe'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0715;
+            color: #f3e8ff;
+            overflow-x: hidden;
+        }
+        .romantic-font {
+            font-family: 'Playfair Display', serif;
+        }
+        @keyframes floatHeart {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-8px) scale(1.08); }
+        }
+        .floating-heart {
+            animation: floatHeart 3s ease-in-out infinite;
+        }
+        .glass-card {
+            background: rgba(26, 16, 37, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+        }
+        .glass-card:hover {
+            border-color: rgba(236, 72, 153, 0.4);
+        }
+        .polaroid-card {
+            background: rgba(32, 18, 48, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(192, 132, 252, 0.25);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .polaroid-card:hover {
+            transform: translateY(-8px) rotate(0deg) scale(1.02) !important;
+            border-color: rgba(236, 72, 153, 0.6);
+            box-shadow: 0 20px 40px -15px rgba(236, 72, 153, 0.3);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-deepDark min-h-screen flex flex-col selection:bg-purple-900 selection:text-pink-200">
+
+    <!-- Navbar / Header -->
+    <header class="sticky top-0 z-50 bg-[#0f0715]/85 backdrop-blur-md border-b border-purple-950 transition-all duration-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-pink-500 text-lg floating-heart"><i class="fa-solid fa-heart"></i></span>
+                <span class="romantic-font font-bold text-xl tracking-wider text-white">M <span class="text-pink-500">❤️</span> B</span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-purple-200">
+                <a href="#kutlama" class="hover:text-pink-400 transition-colors">2. Yılımız</a>
+                <a href="#anilar" class="hover:text-pink-400 transition-colors">Zaman Tüneli</a>
+                <a href="#oyun" class="hover:text-pink-400 transition-colors">Kim Daha Çok Seviyor?</a>
+                <a href="#galeri" class="hover:text-pink-400 transition-colors">Fotoğraflarımız</a>
+            </nav>
+            <button onclick="playBackgroundMusic()" id="musicToggleBtn" class="bg-purple-950/80 hover:bg-purple-900 text-purple-300 border border-purple-800/60 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all shadow-sm flex items-center gap-1.5">
+                <i class="fa-solid fa-music text-pink-400"></i> <span id="musicText">Müziği Aç</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative pt-16 pb-16 px-4 sm:px-6 max-w-4xl mx-auto text-center">
+            <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-80 h-80 bg-purple-600/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+            <div class="absolute top-20 right-10 w-72 h-72 bg-pink-600/15 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+
+            <!-- Stylized Monogram Header -->
+            <div class="inline-flex items-center gap-4 bg-purple-950/60 border border-purple-800/50 px-6 py-2.5 rounded-full shadow-lg mb-8 backdrop-blur-md">
+                <span class="romantic-font text-3xl sm:text-4xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-purple-300">M</span>
+                <span class="text-pink-500 text-2xl sm:text-3xl floating-heart"><i class="fa-solid fa-heart"></i></span>
+                <span class="romantic-font text-3xl sm:text-4xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-400 to-purple-400">B</span>
+            </div>
+            
+            <h1 class="romantic-font text-4xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight mb-6 leading-tight">
+                Hayatımın En Güzel <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">İyikisi</span>
+            </h1>
+            
+            <p class="text-purple-200/80 text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Yolumuzun kesiştiği günden beri her anım seninle daha renkli, daha eğlenceli ve unutulmaz. Bu sayfa sadece ikimize ait, baktıkça yüzümüzü güldüren özel köşemiz.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#galeri" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium px-7 py-3.5 rounded-full shadow-lg shadow-purple-900/50 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-solid fa-images"></i> En Güzel Karelerimiz
+                </a>
+                <a href="#anilar" class="bg-cardDark hover:bg-purple-950/50 border border-purple-800/50 text-purple-200 font-medium px-6 py-3.5 rounded-full transition-all shadow-sm">
+                    Hikayemiz ✨
+                </a>
+            </div>
+        </section>
+
+        <!-- Celebratory 2 Years Banner Section -->
+        <section id="kutlama" class="py-12 px-4 sm:px-6 bg-gradient-to-b from-transparent via-purple-950/30 to-transparent">
+            <div class="max-w-3xl mx-auto">
+                <div class="glass-card relative overflow-hidden p-8 sm:p-12 rounded-3xl shadow-2xl text-center border border-pink-500/30">
+                    <div class="absolute -top-12 -left-12 w-40 h-40 bg-pink-500/15 rounded-full blur-2xl pointer-events-none"></div>
+                    <div class="absolute -bottom-12 -right-12 w-40 h-40 bg-purple-500/20 rounded-full blur-2xl pointer-events-none"></div>
+                    
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-600/40 to-pink-600/40 border border-pink-400/40 text-pink-400 text-3xl mb-5 floating-heart shadow-inner">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    
+                    <h2 class="romantic-font text-3xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-pink-300 to-purple-200 mb-4">
+                        Vay be, 2 sene olmuş! ❤️
+                    </h2>
+                    
+                    <p class="text-purple-200/85 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+                        Sayılara ve takvimlere takılmadan; kahkahalarla, tatlı şapşallıklarla ve birbirimize olan sevgimizle dolu koca iki yıl... Seninle geçen her gün en güzel hediye.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive "Kim Daha Çok Seviyor?" Section -->
+        <section id="oyun" class="py-12 px-4 sm:px-6 max-w-3xl mx-auto">
+            <div id="loveGameArena" class="glass-card relative overflow-hidden p-8 sm:p-12 rounded-3xl shadow-2xl text-center border border-purple-500/30 min-h-[280px] flex flex-col items-center justify-center">
+                <div class="absolute -top-10 -right-10 w-36 h-36 bg-pink-500/15 rounded-full blur-2xl pointer-events-none"></div>
+                <div class="absolute -bottom-10 -left-10 w-36 h-36 bg-purple-500/20 rounded-full blur-2xl pointer-events-none"></div>
+
+                <span class="text-pink-400 text-xs font-semibold uppercase tracking-widest bg-purple-950/80 px-3 py-1 rounded-full border border-purple-800/60 mb-3">Önemli Soru 👀</span>
+                <h2 class="romantic-font text-3xl sm:text-4xl font-bold text-white mb-8">
+                    Kim daha çok seviyor? ❤️
+                </h2>
+
+                <!-- Buttons Container -->
+                <div class="flex flex-wrap items-center justify-center gap-6 w-full relative min-h-[70px]">
+                    <button id="berkayBtn" onclick="selectBerkay()" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-semibold px-9 py-3.5 rounded-full shadow-lg shadow-pink-900/40 transition-all transform hover:scale-105 active:scale-95 text-base sm:text-lg z-10">
+                        Berkay 💜
+                    </button>
+
+                    <button id="melisBtn" 
+                            onmouseenter="escapeMelisButton(event)" 
+                            ontouchstart="escapeMelisButton(event)" 
+                            onclick="escapeMelisButton(event)"
+                            class="bg-purple-950/90 border border-purple-700/70 text-purple-200 font-semibold px-9 py-3.5 rounded-full shadow-md text-base sm:text-lg select-none z-20"
+                            style="transition: left 0.08s ease-out, top 0.08s ease-out;">
+                        Melis 🤍
+                    </button>
+                </div>
+
+                <!-- Result Message -->
+                <div id="loveGameResult" class="hidden mt-6 p-4 rounded-2xl bg-gradient-to-r from-purple-900/60 via-pink-900/60 to-purple-900/60 border border-pink-400/40 text-pink-200 font-medium text-base sm:text-lg animate-bounce">
+                    Tabii ki Berkay! Tartışmaya kapalı 😌❤️✨
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section id="galeri" class="py-16 pb-24 px-4 sm:px-6 max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="romantic-font text-3xl sm:text-5xl font-bold text-white">M <span class="text-pink-500">❤️</span> B</h2>
+            </div>
+
+            <!-- Multi-Photo Upload / Local Folder Sync Bar -->
+            <div class="glass-card p-4 sm:p-5 rounded-2xl shadow-xl mb-10 flex flex-col sm:flex-row items-center justify-between gap-4 border border-purple-800/40">
+                <div class="flex items-center gap-3 text-center sm:text-left flex-col sm:flex-row">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-900 to-pink-900/60 border border-purple-700/50 flex items-center justify-center text-pink-400 text-lg shrink-0">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <p class="text-purple-200/80 text-xs sm:text-sm">Fotoğrafları önizlemede görmek veya yeni fotoğraf eklemek için buradan seçebilirsin.</p>
+                </div>
+                <div class="flex items-center gap-3 shrink-0">
+                    <label class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-medium px-5 py-2.5 rounded-full shadow-lg shadow-purple-900/50 cursor-pointer transition-all transform active:scale-95 text-xs sm:text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-images"></i> Fotoğrafları Seç
+                        <input type="file" id="photoInput" accept="image/*" multiple class="hidden" onchange="handleMultipleImageUpload(event)">
+                    </label>
+                </div>
+            </div>
+
+            <!-- Pure Photo Grid (No Captions) -->
+            <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
+                <!-- Filled dynamically by JS with all 20 photos -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal for Full-Screen Photo View -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4 transition-opacity" onclick="closeLightbox(event)">
+        <button onclick="closeLightbox(event, true)" class="absolute top-5 right-5 w-11 h-11 rounded-full bg-purple-950/80 hover:bg-pink-600 text-white border border-purple-700/50 flex items-center justify-center text-lg transition-colors z-10">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl max-h-[90vh] flex flex-col items-center">
+            <img id="lightboxImg" src="" alt="Fotoğraf" class="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl border border-purple-800/40">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0b0510] border-t border-purple-950 py-10 text-center text-purple-400/60 text-xs">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col items-center gap-2">
+            <p class="romantic-font text-lg text-purple-200 font-medium">Seninle geçen her an, hayatımın en güzel anısı... ❤️</p>
+            <p>© M <span class="text-pink-500">❤️</span> B — Sadece İkimize Özel</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // All 20 uploaded photos (pure photos, no AI captions)
+        const initialPhotos = [
+            "WhatsApp Image 2026-10-29 at 12.51.38 (1).jpg",
+            "WhatsApp Image 2026-10-29 at 12.51.38.jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.40.jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.41 (1).jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.41 (2).jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.41 (3).jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.41.jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.42 (1).jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.42 (2).jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.42 (3).jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.42.jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.43.jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.44.jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.45 (1).jpeg",
+            "WhatsApp Image 2026-10-29 at 12.53.45 (2).jpeg",
+            "WhatsApp Image 2026-10-29 at 12.53.45 (3).jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.45 (4).jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.45 (5).jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.45.jpg",
+            "WhatsApp Image 2026-10-29 at 12.53.46.jpg"
+        ];
+
+        // Store custom loaded dataURLs mapped by filename
+        const customImageStore = {};
+
+        function renderInitialGallery() {
+            const galleryGrid = document.getElementById("galleryGrid");
+            galleryGrid.innerHTML = "";
+
+            initialPhotos.forEach((filename, index) => {
+                const card = createPhotoCard(filename, index);
+                galleryGrid.appendChild(card);
+            });
+        }
+
+        function createPhotoCard(srcOrFilename, cardIndex = null) {
+            const card = document.createElement("div");
+            card.className = "polaroid-card p-2 rounded-2xl shadow-xl group cursor-pointer relative";
+            if (cardIndex !== null) {
+                card.dataset.filename = srcOrFilename;
+            }
+
+            const resolvedSrc = customImageStore[srcOrFilename] || srcOrFilename;
+            const fallbackUrl = `https://placehold.co/600x750/1a1025/f472b6?text=%E2%9D%A4%EF%B8%8F`;
+
+            card.innerHTML = `
+                <div class="relative overflow-hidden rounded-xl aspect-[4/5] bg-[#12091c]" onclick="openLightbox(this.querySelector('img').src)">
+                    <img src="${resolvedSrc}" 
+                         alt="M ❤️ B" 
+                         data-original-name="${srcOrFilename}"
+                         onerror="if(!this.dataset.fallback){this.dataset.fallback='1'; this.src='${fallbackUrl}';}"
+                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <button onclick="event.stopPropagation(); this.closest('.polaroid-card').remove();" class="absolute top-2.5 right-2.5 opacity-0 group-hover:opacity-100 bg-black/60 hover:bg-pink-600 text-white w-8 h-8 rounded-full flex items-center justify-center transition-all" title="Kaldır">
+                        <i class="fa-solid fa-xmark text-xs"></i>
+                    </button>
+                </div>
+            `;
+            return card;
+        }
+
+        // Handle single or multiple image selection; matches existing filenames or adds new photo cards
+        function handleMultipleImageUpload(event) {
+            const files = Array.from(event.target.files);
+            if (!files.length) return;
+
+            const galleryGrid = document.getElementById("galleryGrid");
+
+            files.forEach((file) => {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const dataUrl = e.target.result;
+                    customImageStore[file.name] = dataUrl;
+
+                    // Check if a card with this exact filename already exists in the grid
+                    const existingImg = galleryGrid.querySelector(`img[data-original-name="${CSS.escape(file.name)}"]`);
+                    if (existingImg) {
+                        existingImg.src = dataUrl;
+                    } else {
+                        // Otherwise prepend as a brand-new photo card
+                        const newCard = createPhotoCard(dataUrl);
+                        galleryGrid.prepend(newCard);
+                    }
+                };
+                reader.readAsDataURL(file);
+            });
+
+            event.target.value = "";
+        }
+
+        // Runaway "Melis" Button Logic
+        function escapeMelisButton(event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            const arena = document.getElementById("loveGameArena");
+            const melisBtn = document.getElementById("melisBtn");
+
+            const arenaRect = arena.getBoundingClientRect();
+            const btnRect = melisBtn.getBoundingClientRect();
+
+            const padding = 20;
+            const maxX = Math.max(padding, arenaRect.width - btnRect.width - padding);
+            const maxY = Math.max(padding, arenaRect.height - btnRect.height - padding);
+
+            const randomX = Math.floor(Math.random() * (maxX - padding + 1)) + padding;
+            const randomY = Math.floor(Math.random() * (maxY - padding + 1)) + padding;
+
+            melisBtn.style.position = "absolute";
+            melisBtn.style.left = `${randomX}px`;
+            melisBtn.style.top = `${randomY}px`;
+        }
+
+        // Clickable "Berkay" Button Logic
+        function selectBerkay() {
+            const resultBox = document.getElementById("loveGameResult");
+            resultBox.classList.remove("hidden");
+        }
+
+        // Lightbox Modal Controls
+        function openLightbox(imgSrc) {
+            const modal = document.getElementById("lightboxModal");
+            const modalImg = document.getElementById("lightboxImg");
+
+            modalImg.src = imgSrc;
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+        }
+
+        function closeLightbox(event, force = false) {
+            if (force || event.target.id === "lightboxModal") {
+                const modal = document.getElementById("lightboxModal");
+                modal.classList.add("hidden");
+                modal.classList.remove("flex");
+            }
+        }
+
+        // Background Music Status Toggle
+        let isPlaying = false;
+        function playBackgroundMusic() {
+            const btnText = document.getElementById("musicText");
+            isPlaying = !isPlaying;
+            btnText.innerText = isPlaying ? "Müzik Çalıyor 🎶" : "Müziği Aç";
+        }
+
+        // Initialize Gallery on Page Load
+        window.addEventListener("DOMContentLoaded", renderInitialGallery);
+    </script>
+</body>
+</html>
